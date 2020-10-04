@@ -1,0 +1,11 @@
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\bin\Debug\Example_algorithm.exe.config
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\bin\Debug\Example_algorithm.exe
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\bin\Debug\Example_algorithm.pdb
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.csprojAssemblyReference.cache
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.Form1.resources
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.Properties.Resources.resources
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.csproj.GenerateResource.cache
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.csproj.CoreCompileInputs.cache
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.exe
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.pdb
+C:\Users\DKNik\source\repos\Example_algorithm\Example_algorithm\obj\Debug\Example_algorithm.Error_Form.resources
