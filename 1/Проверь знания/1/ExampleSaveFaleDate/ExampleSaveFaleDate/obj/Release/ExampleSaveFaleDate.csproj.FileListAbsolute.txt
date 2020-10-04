@@ -1,0 +1,88 @@
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\ApplicationIcon.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileLarge.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileMedium.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileSmall.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\IconicTileMediumLarge.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\IconicTileSmall.png
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate.dll
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate.pdb
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\AppManifest.xaml
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Properties\WMAppManifest.xml
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate_Release_AnyCPU.xap
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\App.g.cs
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\MainPage.g.cs
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.g.resources
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.Resources.AppResources.resources
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.csproj.GenerateResource.Cache
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.dll
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.pdb
+D:\сохранение проекта\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\XapCacheFile.xml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileLarge.png
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileMedium.png
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\FlipCycleTileSmall.png
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\IconicTileMediumLarge.png
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Assets\Tiles\IconicTileSmall.png
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\TextFiles\TextZagadki.txt
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate.pdb
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\AppManifest.xaml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Properties\WMAppManifest.xml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ExampleSaveFaleDate_Release_AnyCPU.xap
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Microsoft.Expression.Drawing.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Microsoft.Expression.Interactions.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\System.Windows.Interactivity.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\de\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\en\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\es\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\fr\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\it\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ja\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ko\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ru\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\de\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\en\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\es\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\fr\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\it\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ja\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ko\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ru\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-Hant\System.Windows.Interactivity.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\App.g.cs
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\MainPage.g.cs
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.g.resources
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.Resources.AppResources.resources
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.csproj.GenerateResource.Cache
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.pdb
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\XapCacheFile.xml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Microsoft.Advertising.Mobile.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\microsoft.advertising.mobile.ui.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Microsoft.Phone.Controls.Maps.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\Microsoft.Advertising.Mobile.xml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\microsoft.advertising.mobile.ui.xml
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\cs-CZ\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\da-DK\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\de-DE\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\el-GR\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\en-GB\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\es-ES\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\fi-FI\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\fr-FR\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\hu-HU\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\it-IT\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ja-JP\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ko-KR\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\nb-NO\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\nl-NL\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\pl-PL\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\pt-BR\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\pt-PT\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\ru-RU\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\sv-SE\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-CN\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\Bin\Release\zh-TW\Microsoft.Advertising.Mobile.resources.dll
+D:\sweety\1\ExampleSaveFaleDate\ExampleSaveFaleDate\obj\Release\ExampleSaveFaleDate.csprojResolveAssemblyReference.cache

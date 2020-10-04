@@ -1,0 +1,476 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+    xmlns:edc="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Drawing"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:eim="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
+    xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+    x:Class="ExampleSaveFaleDate.MainPage"   
+    mc:Ignorable="d"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <Storyboard x:Name="Storyboard1"/>
+        <Storyboard x:Name="Storyboard3">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="gridZall">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.4"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.6"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.8"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Color x:Key="Color1">#FF62FF62</Color>
+
+    </phone:PhoneApplicationPage.Resources>
+
+
+
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="768"/>
+        </Grid.RowDefinitions>
+
+
+
+        <!-- ПРИМЕЧАНИЕ О ЛОКАЛИЗАЦИИ:
+            Чтобы локализовать отображаемые строки, скопируйте их значения в соответствующим образом названные
+            ключи в файле ресурсов нейтрального языка приложения (AppResources.resx), а затем
+            замените жестко заданное текстовое значение между кавычками атрибутов
+            на выражение привязки, указывающее на имя соответствующей строки.
+
+            Пример:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            Данная привязка указывает на строковый ресурс шаблона с именем "ApplicationTitle".
+
+            Добавление поддерживаемых языков на вкладку "Свойства проекта" создает
+            новый RESX-файл для каждого языка, в котором могут храниться переведенные значения
+            строк пользовательского интерфейса. Привязка в этих примерах вызывает отрисовку
+            значений атрибутов из RESX-файла, соответствующего
+            CurrentUICulture приложения во время выполнения.
+         -->
+
+        <!--TitlePanel содержит имя приложения и заголовок страницы-->
+
+        <!--Раскомментируйте, чтобы увидеть сетку выравнивания и выровнять
+            элементы управления по общим границам.  Верхнее поле изображения равно -32 пикселя, чтобы
+            осталось место для области уведомлений. Установите его равным 0 (или вообще удалите поле),
+            если область уведомлений скрыта.
+
+            Перед сдачей приложения удалите этот код XAML и само изображение.-->
+        <!--<Image Source="/Assets/BuxtonSketch.ttf" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" Grid.RowSpan="2" IsHitTestVisible="False" />-->
+        <!--ContentPanel — поместите здесь дополнительное содержимое-->
+        <Grid x:Name="ContentPanel" Background="#FF7D007D">
+
+            <Grid x:Name="gridZ" HorizontalAlignment="Left" Height="790" VerticalAlignment="Top" Width="480" Margin="0,-22,0,0" Background="{x:Null}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tboxZ" HorizontalAlignment="Right" Height="72" Margin="0,498,51,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" InputScope="Text" KeyDown="TextBox_KeyDown" GotFocus="tboxZ_GotFocus" LostFocus="tboxZ_LostFocus" KeyUp="tboxZ_KeyUp" Text="Введите вариант ответа:"/>
+                <TextBlock x:Name="tbnom" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="142,237,0,0" FontSize="30" Foreground="Black" Width="243" Height="41" FontWeight="Bold">
+                    <TextBlock.Resources>
+                        <FontFamily x:Key="BuxtonSketch">Buxton Sketch</FontFamily>
+                    </TextBlock.Resources>
+                    <TextBlock.FontFamily>
+                        <StaticResource ResourceKey="BuxtonSketch"/>
+                    </TextBlock.FontFamily>
+                </TextBlock>
+                <TextBlock x:Name="tbtext" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="56,278,0,0" Height="215" Width="373" FontSize="22" Foreground="Black" FontWeight="Bold"/>
+                <Button HorizontalAlignment="Left" Margin="10,636,0,-6" VerticalAlignment="Top" Click="Button_Click_1" Width="208" Height="80" Background="Red" Content="Предыдущая" FontSize="20" RenderTransformOrigin="0.435,0.519" BorderBrush="Black" Foreground="Black"/>
+                <Button HorizontalAlignment="Left" Margin="263,636,0,-6" VerticalAlignment="Top" Click="Button_Click" Width="207" Height="80" Content="Следующая" FontSize="20" BorderBrush="Black" Background="#FF0833F7" Foreground="Black"/>
+                <TextBlock x:Name="tbpoints" HorizontalAlignment="Left" Margin="69,164,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Foreground="Black" FontSize="22" Width="98"/>
+                <TextBlock x:Name="tbok" HorizontalAlignment="Left" Margin="356,0,0,590" TextWrapping="Wrap" VerticalAlignment="Bottom" Foreground="Black" FontSize="22" Width="73" Height="31" RenderTransformOrigin="0.5,0.5"/>
+                <Button x:Name="btnZall" Content="Все" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="188,636,0,-6" Width="104" FontSize="20" RenderTransformOrigin="0.468,0.476" Height="80" Click="btnZall_Click" BorderBrush="Black" Foreground="Black" Background="#FFBBFF05"/>
+                <Image x:Name="star" Source="/Assets/star2.png" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.489,0.507" Margin="292,149,0,0"/>
+                <Image x:Name="winPoints" Source="/Assets/trueAnswer.png" HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="59" Margin="5,149,0,0" RenderTransformOrigin="0.484,0.559"/>
+                <Image x:Name="tip" Source="/Assets/ImageTFMenu/helpImages.png" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="86" Margin="56,570,0,0"/>
+                <TextBlock x:Name="tipText" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="142,575,0,0" Width="250" Height="46" FontSize="24" Foreground="Black" FontWeight="Bold"/>
+                <Image x:Name="btn_back_gridAllz" Source="/Assets/home.png" HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="71" Margin="206,721,0,-77" RenderTransformOrigin="0.48,0.515"/>
+                <Button x:Name="btGoBackToMenu" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="188,721,0,-77" Width="104" Height="66" Opacity="0" Click="btGoBackToMenu_Click"/>
+                <Button x:Name="btBeginTips" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="56,570,0,0" Width="86" Height="75" Opacity="0" Click="btBeginTips_Click"/>
+                <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="209" Source="/Assets/0_62ad0_17455afb_XL.png" Margin="282,702,-11,-15"/>
+                <Image HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="209" Source="/Assets/0_62ad0_17455afb_XL.png" Margin="16,702,0,-15"/>
+                <UI:AdControl ApplicationId="test_client" AdUnitId="Image480_80" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="480" Margin="0,25,0,0"/>
+            </Grid>
+            <Grid x:Name="gridZall" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+
+                <Canvas x:Name="canvasZ" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="494" Margin="-14,0,0,0">
+                    <ScrollViewer Height="543" Width="484" Canvas.Left="10" Canvas.Top="215">
+                        <Grid Height="2224" Width="473">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="332*"/>
+                                <ColumnDefinition Width="141*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="btn1z_Copy1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,10,0,0" Click="btn1z_Copy1_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy2" Content="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,10,0,0" Click="btn1z_Copy2_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy3" Content="3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,10,0,0" Click="btn1z_Copy3_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,10,0,0" Click="btn1z_Copy4_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy5" Content="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,10,0,0" Click="btn1z_Copy5_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy6" Content="6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,100,0,0" Click="btn1z_Copy6_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,100,0,0" Click="btn1z_Copy7_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy8" Content="8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,100,0,0" Click="btn1z_Copy8_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy9" Content="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,100,0,0" Click="btn1z_Copy9_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy10" Content="10" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,100,0,0" Click="btn1z_Copy10_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy11" Content="11" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,190,0,0" Click="btn1z_Copy11_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy12" Content="12" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,190,0,0" Click="btn1z_Copy12_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy13" Content="13" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,190,0,0" Click="btn1z_Copy13_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy14" Content="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,190,0,0" Click="btn1z_Copy14_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy15" Content="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,190,0,0" Click="btn1z_Copy15_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy16" Content="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,280,0,0" Click="btn1z_Copy16_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy17" Content="17" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,280,0,0" Click="btn1z_Copy17_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy18" Content="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,280,0,0" Click="btn1z_Copy18_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy19" Content="19" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,280,0,0" Click="btn1z_Copy19_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy20" Content="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,280,0,0" Click="btn1z_Copy20_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy21" Content="21" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,370,0,0" Click="btn1z_Copy21_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy22" Content="22" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,370,0,0" Click="btn1z_Copy22_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy23" Content="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,370,0,0" Click="btn1z_Copy23_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy24" Content="24" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,370,0,0" Click="btn1z_Copy24_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy25" Content="25" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,370,0,0" Click="btn1z_Copy25_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy26" Content="26" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,460,0,0" Click="btn1z_Copy26_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy27" Content="27" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,460,0,0" Click="btn1z_Copy27_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy28" Content="28" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,460,0,0" Click="btn1z_Copy28_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy29" Content="29" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,460,0,0" Click="btn1z_Copy29_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy30" Content="30" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,460,0,0" Click="btn1z_Copy30_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy31" Content="31" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,550,0,0" Click="btn1z_Copy31_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy32" Content="32" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,550,0,0" Click="btn1z_Copy32_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy33" Content="33" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,550,0,0" Click="btn1z_Copy33_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy34" Content="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,550,0,0" Click="btn1z_Copy34_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy35" Content="35" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,550,0,0" Click="btn1z_Copy35_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy36" Content="36" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,640,0,0" Click="btn1z_Copy36_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy37" Content="37" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,640,0,0" Click="btn1z_Copy37_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy38" Content="38" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,640,0,0" Click="btn1z_Copy38_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy39" Content="39" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,640,0,0" Click="btn1z_Copy39_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy40" Content="40" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,640,0,0" Click="btn1z_Copy40_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy41" Content="41" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,730,0,0" Click="btn1z_Copy41_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy42" Content="42" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,730,0,0" Click="btn1z_Copy42_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy43" Content="43" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,730,0,0" Click="btn1z_Copy43_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy44" Content="44" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,730,0,0" Click="btn1z_Copy44_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy45" Content="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,730,0,0" Click="btn1z_Copy45_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy46" Content="46" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,820,0,0" Click="btn1z_Copy46_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy47" Content="47" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,820,0,0" Click="btn1z_Copy47_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy48" Content="48" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,820,0,0" Click="btn1z_Copy48_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy49" Content="49" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,820,0,0" Click="btn1z_Copy49_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy50" Content="50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,820,0,0" Click="btn1z_Copy50_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy51" Content="51" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,910,0,0" Click="btn1z_Copy51_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy52" Content="52" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,910,0,0" Click="btn1z_Copy52_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy53" Content="53" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,910,0,0" Click="btn1z_Copy53_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy54" Content="54" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,910,0,0" Click="btn1z_Copy54_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy55" Content="55" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,910,0,0" Click="btn1z_Copy55_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy56" Content="56" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1000,0,0" Click="btn1z_Copy56_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy57" Content="57" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1000,0,0" Click="btn1z_Copy57_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy58" Content="58" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1000,0,0" Click="btn1z_Copy58_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy59" Content="59" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1000,0,0" Click="btn1z_Copy59_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy60" Content="60" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1000,0,0" Click="btn1z_Copy60_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy61" Content="61" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1090,0,0" Click="btn1z_Copy61_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy62" Content="62" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1090,0,0" Click="btn1z_Copy62_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy63" Content="63" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1090,0,0" Click="btn1z_Copy63_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy64" Content="64" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1090,0,0" Click="btn1z_Copy64_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy65" Content="65" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1090,0,0" Click="btn1z_Copy65_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy66" Content="66" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1180,0,0" Click="btn1z_Copy66_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy67" Content="67" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1180,0,0" Click="btn1z_Copy67_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy68" Content="68" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1180,0,0" Click="btn1z_Copy68_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy69" Content="69" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1180,0,0" Click="btn1z_Copy69_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy70" Content="70" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1180,0,0" Click="btn1z_Copy70_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy71" Content="71" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1270,0,0" Click="btn1z_Copy71_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy72" Content="72" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1270,0,0" Click="btn1z_Copy72_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy73" Content="73" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1270,0,0" Click="btn1z_Copy73_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy74" Content="74" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1270,0,0" Click="btn1z_Copy74_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy75" Content="75" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1270,0,0" Click="btn1z_Copy75_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy76" Content="76" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1360,0,0" Click="btn1z_Copy76_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy77" Content="77" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1360,0,0" Click="btn1z_Copy77_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy78" Content="78" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1360,0,0" Click="btn1z_Copy78_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy79" Content="79" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1360,0,0" Click="btn1z_Copy79_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy80" Content="80" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1360,0,0" Click="btn1z_Copy80_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy81" Content="81" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1450,0,0" Click="btn1z_Copy81_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy82" Content="82" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1450,0,0" Click="btn1z_Copy82_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy83" Content="83" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1450,0,0" Click="btn1z_Copy83_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy84" Content="84" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1450,0,0" Click="btn1z_Copy84_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy85" Content="85" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1450,0,0" Click="btn1z_Copy85_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy86" Content="86" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1540,0,0" Click="btn1z_Copy86_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy87" Content="87" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1540,0,0" Click="btn1z_Copy87_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy88" Content="88" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1540,0,0" Click="btn1z_Copy88_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy89" Content="89" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1540,0,0" Click="btn1z_Copy89_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy90" Content="90" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1540,0,0" Click="btn1z_Copy90_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy91" Content="91" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1630,0,0" Click="btn1z_Copy91_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy92" Content="92" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1630,0,0" Click="btn1z_Copy92_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy93" Content="93" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1630,0,0" Click="btn1z_Copy93_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy94" Content="94" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1630,0,0" Click="btn1z_Copy94_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy95" Content="95" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1630,0,0" Click="btn1z_Copy95_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy96" Content="96" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1720,0,0" Click="btn1z_Copy96_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy97" Content="97" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1720,0,0" Click="btn1z_Copy97_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy98" Content="98" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1720,0,0" Click="btn1z_Copy98_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy99" Content="99" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1720,0,0" Click="btn1z_Copy99_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy100" Content="100" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1720,0,0" Click="btn1z_Copy100_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy101" Content="101" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1810,0,0" Click="btn1z_Copy101_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy102" Content="102" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1810,0,0" Click="btn1z_Copy102_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy103" Content="103" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1810,0,0" Click="btn1z_Copy103_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy104" Content="104" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1810,0,0" Click="btn1z_Copy104_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy105" Content="105" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1810,0,0" Click="btn1z_Copy105_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy106" Content="106" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1900,0,0" Click="btn1z_Copy106_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy107" Content="107" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1900,0,0" Click="btn1z_Copy107_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy108" Content="108" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1900,0,0" Click="btn1z_Copy108_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy109" Content="109" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1900,0,0" Click="btn1z_Copy109_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy110" Content="110" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1900,0,0" Click="btn1z_Copy110_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy111" Content="111" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,1990,0,0" Click="btn1z_Copy111_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy112" Content="112" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,1990,0,0" Click="btn1z_Copy112_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy113" Content="113" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,1990,0,0" Click="btn1z_Copy113_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy114" Content="114" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,1990,0,0" Click="btn1z_Copy114_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy115" Content="115" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,1990,0,0" Click="btn1z_Copy115_Click" Background="#FF474B49" Grid.Column="1"/>
+                            <Button x:Name="btn1z_Copy116" Content="116" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="12,2080,0,0" Click="btn1z_Copy116_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy117" Content="117" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="101,2080,0,0" Click="btn1z_Copy117_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy118" Content="118" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="190,2080,0,0" Click="btn1z_Copy118_Click" Background="#FF474B49"/>
+                            <Button x:Name="btn1z_Copy119" Content="119" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="280,2080,0,0" Click="btn1z_Copy119_Click" Background="#FF474B49" Grid.ColumnSpan="2"/>
+                            <Button x:Name="btn1z_Copy120" Content="120" HorizontalAlignment="Left" VerticalAlignment="Top" Width="89" Height="86" Margin="42,2080,0,0" Click="btn1z_Copy120_Click" Background="#FF474B49" Grid.Column="1"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Canvas>
+
+                <TextBlock x:Name="TitlePage" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Список Загадок" VerticalAlignment="Top" Margin="27,152,0,0" Width="320" Height="51" FontSize="40" Foreground="Black" FontWeight="Bold"/>
+            </Grid>
+            <Grid x:Name="gridGolovolom" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="473" VerticalAlignment="Top" Width="470" Margin="46,-44,-36,0" Source="/Assets/ornaments.png"/>
+                <TextBlock x:Name="tbGolovolomkiZagolovok" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Головоломки" VerticalAlignment="Top" Height="81" Width="342" LineHeight="20" FontSize="50" Margin="30,66,0,0" FontWeight="Bold"/>
+                <phone:LongListSelector x:Name="MyLongListG" HorizontalAlignment="Left" Width="418" Margin="0,188,0,0" FontSize="35" FontWeight="Bold" Height="480" VerticalAlignment="Top" Foreground="#FF1D1D1D" SelectionChanged="MyLongListG_SelectionChanged"/>
+                <Image HorizontalAlignment="Left" Height="102.122" VerticalAlignment="Top" Width="107.891" Margin="190.326,684.91,0,-19.032" Source="/Assets/shiny-downloads-icon.png" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-227.168"/>
+                    </Image.RenderTransform>
+                </Image>
+                <Button x:Name="btnbackmenufrgol" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Margin="194,679,0,0" Height="89" Opacity="0" Click="btnbackmenufrgol_Click"/>
+                <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="204" Source="/Assets/0_62ad0_17455afb_XL.png" Margin="312,679,-36,0"/>
+                <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="204" Source="/Assets/0_62ad0_17455afb_XL.png" Margin="10,679,0,0"/>
+            </Grid>
+            <Grid x:Name="gridWin" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Opacity="0.95" d:IsHidden="True">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF539FB6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Image x:Name="starsPicters" Source="/Assets/zvezdochki.png" HorizontalAlignment="Left" Width="480" Margin="10,50,-10,108"/>
+                <TextBlock x:Name="winTextblock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Правильно!" VerticalAlignment="Top" Foreground="#FF17FB00" FontSize="53.333" Width="333" Margin="88,114,0,0" FontWeight="Bold"/>
+                <TextBlock x:Name="winTextblock1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Для продолжения нажмите на экран..." VerticalAlignment="Top" Margin="52,576,0,0" Width="369" Foreground="#FFF6FBF6"/>
+                <Button x:Name="btBackandNext" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="758" Width="480" Opacity="0" Click="btBackandNext_Click" Margin="0,10,0,0"/>
+            </Grid>
+            <Grid x:Name="gridFalse" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Background="Black" Opacity="0.97" d:IsHidden="True">
+                <Image x:Name="ImageFalse" Source="/Assets/fileclose.png" HorizontalAlignment="Left" Height="311" VerticalAlignment="Top" Width="304" Margin="104,286,0,0"/>
+                <TextBlock x:Name="textblockFalse" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Ответ не верный!" VerticalAlignment="Top" Margin="57,154,0,0" Width="366" Height="72" FontSize="40" Foreground="#FFE80D0D" FontWeight="Bold"/>
+                <TextBlock x:Name="textblockFalse2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Для продолжения нажмите на экран..." VerticalAlignment="Top" Margin="57,649,0,0" Width="366"/>
+                <Button x:Name="btnFalseandback" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Height="772" Width="480" Opacity="0" Click="btnFalseandback_Click"/>
+            </Grid>
+            <Grid x:Name="gridTF" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Button x:Name="btnTFTrue" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="256,596,0,-23" Height="195" Width="200" BorderBrush="Transparent" Foreground="Black"  FontWeight="Bold" Click="btnTFTrue_Click" ClickMode="Press">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/Assets/ImageTFMenu/BtnYes.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnTFFalse" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,596,0,-23" Height="195" Width="200" BorderBrush="Transparent" Foreground="Black" FontWeight="Bold" VerticalContentAlignment="Bottom" Click="btnTFFalse_Click" ClickMode="Press">
+                    <Button.Background>
+                        <ImageBrush Stretch="Fill" ImageSource="/Assets/ImageTFMenu/BtnNo.png"/>
+                    </Button.Background>
+                </Button>
+                <TextBlock x:Name="tbNumberAlligetion" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Утверждение:" VerticalAlignment="Top" Margin="145,193,0,0" Width="205" Height="34" Foreground="Black" FontWeight="Bold"/>
+                <TextBlock x:Name="tbTFnumberStar" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="30,101,0,0" Width="267" Foreground="Black" Height="38" FontWeight="Bold" FontSize="20"/>
+                <TextBlock x:Name="tbTFErrorAppot" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Жизней:" VerticalAlignment="Top" Margin="30,139,0,0" Foreground="Black" FontWeight="Bold" Width="125" RenderTransformOrigin="0.312,0.704"/>
+                <edc:Callout AnchorPoint="0.222,1.125" CalloutStyle="RoundedRectangle" Content="" Fill="#FF7979B4" FontSize="18" HorizontalAlignment="Left" Height="264" Margin="10,232,0,0" Stroke="Black" VerticalAlignment="Top" Width="460" FontWeight="Bold"/>
+                <TextBlock x:Name="tbTFTextQuest" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="30,232,0,0" Height="239" Width="426" Foreground="#FFF5F4F4" FontWeight="Bold" FontSize="25.333"/>
+                <Image HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="100" Margin="10,496,0,0" Source="/Assets/ImageTFMenu/robot.png"/>
+            </Grid>
+            <Grid x:Name="gridSetColor" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Background="Black" d:IsHidden="True">
+                <Button x:Name="btGreen1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" BorderBrush="Transparent" Background="Lime" Click="btGreen1_Click"/>
+                <Button x:Name="btBlue1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="166,0,0,0" BorderBrush="Transparent" Background="#FF0000DC" Click="btBlue1_Click"/>
+                <Button x:Name="btCrimson" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="329,0,0,0" BorderBrush="Transparent" Background="Red" Click="btCrimson_Click"/>
+                <Button x:Name="btPink1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="0,168,0,0" BorderBrush="Transparent" Background="#FFFF00AD" Click="btPink1_Click"/>
+                <Button x:Name="btYelow1" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="166,168,0,0" BorderBrush="Transparent" Background="Yellow" Click="btYelow1_Click"/>
+                <Button x:Name="btBlue2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="329,168,0,0" BorderBrush="Transparent" Background="#FF615909" Click="btBlue2_Click"/>
+                <Button x:Name="btOrage" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="329,330,0,0" BorderBrush="Transparent" Background="#FF7D007D" Click="btOrage_Click"/>
+                <Button x:Name="btMauve" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="166,330,0,0" BorderBrush="Transparent" Background="#FFAA3700" Click="btMauve_Click"/>
+                <Button x:Name="btGreen2" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="0,330,0,0" BorderBrush="Transparent" Background="DarkGreen" Click="btGreen2_Click"/>
+                <Button x:Name="btBrown" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="0,495,0,0" BorderBrush="Transparent" Background="#FF8C8C8C" Click="btBrown_Click"/>
+                <Button x:Name="btWhite" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="166,495,0,0" BorderBrush="Transparent" Background="Cyan" Click="btWhite_Click" Foreground="White"/>
+                <Button x:Name="btViolet" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="150" Width="151" Margin="329,495,0,0" BorderBrush="Transparent" Click="btViolet_Click" Background="#FF508296"/>
+                <Image HorizontalAlignment="Left" Height="76" VerticalAlignment="Top" Width="84" Margin="202,682,0,0" Source="/Assets/btBackAllz.png"/>
+                <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="202,682,0,0" Width="84" Height="76" Opacity="0" Click="Button_Click_15"/>
+            </Grid>
+            <Grid x:Name="gridGeneralMenu" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Button x:Name="btGoToAllGolov" HorizontalAlignment="Left" Margin="235,237,0,0" VerticalAlignment="Top" Width="240" Height="221" Background="#FF0017FD" Style="{StaticResource PivotTitleStyle}" BorderBrush="#FF0017FD" Click="btGoToAllGolov_Click">
+                    <Grid HorizontalAlignment="Left" Height="177" VerticalAlignment="Top" Width="189">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="44" Text="Головоломки" FontSize="26" TextAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" Height="75" Margin="0,102,0,0" Text="  Много разнообразных задач которые вам предстоит решить!" FontSize="16" Foreground="Black"/>
+                    </Grid>
+                </Button>
+                <Button x:Name="btGoToAllZag" HorizontalAlignment="Left" Margin="0,239,0,0" VerticalAlignment="Top" Width="235" Height="221" Background="#FF0017FD" BorderBrush="#FF0017FD" Click="btGoToAllZag_Click">
+                    <Grid Height="180" Width="201">
+                        <TextBlock TextWrapping="Wrap" Text="Загадки" TextAlignment="Center" FontSize="26" FontWeight="Bold" Margin="-5,0,0,136"/>
+                        <TextBlock TextWrapping="Wrap" Text="  Отгадывайте различные интересные загадки, и получайте  очки!" FontSize="16" Foreground="Black" Margin="0,104,5,0"/>
+                    </Grid>
+                </Button>
+                <Button x:Name="btGoToAllTF" HorizontalAlignment="Left" Margin="0,465,0,0" VerticalAlignment="Top" Width="470" Height="127" Background="#FF0017FD" Style="{StaticResource PivotTitleStyle}" BorderBrush="#FF0017FD" Click="btGoToAllTF_Click">
+                    <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="447">
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="34" Text="Правда или Ложь" FontSize="26" Margin="46,-8,0,0" TextAlignment="Center"/>
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" Вам нужно отличить правдивое утверждение от лжи..." VerticalAlignment="Bottom" FontSize="16" Width="423" Height="42" Foreground="Black"/>
+                    </Grid>
+                </Button>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="П  Р  О  В  Е  Р  Ь     З  Н  А  Н  И  Я" VerticalAlignment="Top" Width="480" Height="43" Foreground="Black" FontSize="28" FontWeight="Bold" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="ГЛАВНАЯ" VerticalAlignment="Top" Margin="55,48,0,0" Height="93" Width="258" FontSize="47" FontWeight="Bold"/>
+                <Image x:Name="TileSetColors" Source="/Assets/iPhoto-icon.png" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="72" Margin="55,611,0,0"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,611,0,0" Height="67" Width="74" BorderBrush="Transparent" Foreground="WhiteSmoke" Background="Transparent" Click="Button_Click_3" Opacity="0"/>
+                <Image x:Name="Like" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="80" Margin="347,611,0,0" Source="/Assets/bonus48x48.png"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="347,614,0,0" Width="80" Height="67" Opacity="0"/>
+                <Image HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="73" Margin="203,611,0,0" Source="/Assets/Question-mark-icon.png"/>
+                <Button x:Name="btn_about" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="203,607,0,0" Height="74" Width="73" Opacity="0" Click="btn_about_Click"/>
+            </Grid>
+            <Grid x:Name="gridTFCategory" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Категории" VerticalAlignment="Top" Margin="68,20,0,0" Width="222" Height="59" FontSize="40" FontWeight="Bold"/>
+                <Canvas HorizontalAlignment="Left" Height="666" VerticalAlignment="Top" Width="460" Margin="10,102,0,0">
+                    <ScrollViewer HorizontalAlignment="Left" Height="656" VerticalAlignment="Top" Width="480" Canvas.Top="10">
+                        <Grid Height="1412" Width="446">
+                            <Button x:Name="btnLiteratyra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" BorderBrush="Black" Content="Литература" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Click="btnLiteratyra_Click">
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Assets/ImageTFMenu/ImageLiteratyra.png" Stretch="Fill"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="btnHistory" Content="История" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" Margin="0,445,0,0" BorderBrush="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Click="btnHistory_Click">
+                                <Button.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/ImageTFMenu/ImageHistory.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="btnAutoCategory" Content="Автомобили" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" Margin="0,225,0,0" BorderBrush="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Foreground="Black" Click="btnAutoCategory_Click">
+                                <Button.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/ImageTFMenu/ImageCars.png"/>
+                                </Button.Background>
+                            </Button>
+                            <TextBlock x:Name="tbPointLitra" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,76,0,0" Height="65" Width="116" FontSize="48"/>
+                            <TextBlock x:Name="tbPointAuto" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,308,0,0" Height="65" Width="116" FontSize="48"/>
+                            <TextBlock x:Name="tbPointHistory" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,520,0,0" Height="65" Width="116" FontSize="48"/>
+                            <Button x:Name="btn_IT_Tehnolog" Content="Устройство ЭВМ" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" Margin="0,670,0,0" BorderBrush="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Foreground="White" Click="btn_IT_Tehnolog_Click">
+                                <Button.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/Computer-icon.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="btn_Earth" Content="Планета Земля" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" Margin="0,895,0,0" BorderBrush="Black" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" Foreground="White" Click="btn_Earth_Click">
+                                <Button.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/earth-icon.png"/>
+                                </Button.Background>
+                            </Button>
+                            <Button x:Name="btn_Sport" Content="Спорт" HorizontalAlignment="Left" VerticalAlignment="Top" Height="220" Width="226" Margin="0,1120,0,0" BorderBrush="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" Foreground="Black" Click="btn_Sport_Click" FontWeight="Bold">
+                                <Button.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Assets/icons-sports.jpg"/>
+                                </Button.Background>
+                            </Button>
+                            <TextBlock x:Name="tbPointTehnology" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,757,0,0" Height="65" Width="116" FontSize="48"/>
+                            <TextBlock x:Name="tbPointEarth" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,974,0,0" Height="65" Width="116" FontSize="48"/>
+                            <TextBlock x:Name="tbPointSports" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="250,1204,0,0" Height="65" Width="116" FontSize="48"/>
+                        </Grid>
+                    </ScrollViewer>
+                </Canvas>
+                <Image HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="70" Margin="362,20,0,0" Source="/Assets/btBackAllz.png" RenderTransformOrigin="0.514,0.441"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="362,20,0,0" Height="59" Width="70" Opacity="0" Click="Button_Click_4"/>
+            </Grid>
+            <Grid x:Name="gridTFWinAndAswer" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Opacity="0.9" Background="#FF494343" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="391" VerticalAlignment="Top" Width="386" Margin="41,318,0,0" Source="/Assets/ImageTFMenu/smileWin.png"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Правильно!" VerticalAlignment="Top" Margin="136,32,0,0" Width="216" Height="63" Foreground="Lime" FontSize="35" FontWeight="Bold"/>
+                <TextBlock x:Name="tbInputTrueAns" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="52,164,0,0" Width="362" Height="149" FontSize="22" FontWeight="Bold"/>
+                <TextBlock x:Name="tbTans" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="118,122,0,0" Width="270" Height="37" FontSize="22"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Для продолжения нажмите на экран..." VerticalAlignment="Top" Margin="30,714,0,0" Width="408" FontSize="22" Foreground="#FFC0C904"/>
+                <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="768" Width="480" BorderBrush="Transparent" Click="Button_Click_5" Opacity="0"/>
+            </Grid>
+            <Grid x:Name="gridTFErorrAnswer" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Opacity="0.9" Background="#FF494343" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="376" VerticalAlignment="Top" Width="386" Margin="52,333,0,0" Source="/Assets/ImageTFMenu/SadSmile.png"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Вы ошиблись..." VerticalAlignment="Top" Margin="112,32,0,0" Width="302" Height="63" Foreground="#FFFF6800" FontSize="35" FontWeight="Bold"/>
+                <TextBlock x:Name="tbInputTrueAns1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="52,164,0,0" Width="362" Height="149" FontSize="22" FontWeight="Bold"/>
+                <TextBlock x:Name="tb2Tans" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="136,100,0,0" Width="238" Height="37" FontSize="22"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Для продолжения нажмите на экран..." VerticalAlignment="Top" Margin="30,714,0,0" Width="408" FontSize="22" Foreground="#FFC0C904"/>
+                <Button x:Name="TFbtnGrSad" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="768" Width="491" BorderBrush="Transparent" Opacity="0" Margin="-11,0,0,0" Click="TFbtnGrSad_Click"/>
+            </Grid>
+            <Grid x:Name="gridTotalTFLose" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Background="#FF2D3232" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="418" VerticalAlignment="Top" Width="422" Margin="30,192,0,0" Source="/Assets/ImageTFMenu/robotFalseicon.png"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Вы проиграли" VerticalAlignment="Top" Width="262" Height="53" Margin="130,30,0,0" FontSize="36" Foreground="#FFFF9700" FontWeight="Bold"/>
+                <edc:Callout AnchorPoint="0.729,1.9" CalloutStyle="Oval" Content="К сожалению вы проиграли, но не расстраивайтесь, вы можете попробывать еще раз." Fill="#FF2A2A2E" FontSize="18.667" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="430.997" Margin="25.999,89.301,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <edc:Callout.RenderTransform>
+                        <CompositeTransform Rotation="-0.734"/>
+                    </edc:Callout.RenderTransform>
+                </edc:Callout>
+                <Button Content="Переиграть уровень" HorizontalAlignment="Left" Margin="30,615,0,0" VerticalAlignment="Top" Width="422" BorderBrush="#FF0F0F0F" Foreground="#FF4AFB08" Background="Transparent" Click="Button_Click_9"/>
+                <Button Content="Вернуться к списку категорий" HorizontalAlignment="Left" Margin="30,686,0,0" VerticalAlignment="Top" Width="422" BorderBrush="#FF0F0F0F" Foreground="#FF4AFB08" Background="Transparent" Click="Button_Click_10"/>
+            </Grid>
+            <Grid x:Name="gridTotalTFWin" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" Background="#FF2D3232" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="406" VerticalAlignment="Top" Width="396" Margin="50,184,0,0" Source="/Assets/ImageTFMenu/RobotIcon.png"/>
+                <edc:Callout AnchorPoint="0.229,1.572" CalloutStyle="Oval" Content="Я вас поздравляю! Вы удачно прошли этот уровень!" Fill="#FF2A2A2E" FontSize="18.667" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="436.894" Margin="20.102,47.339,0,0" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Foreground="#FF87F700" FontWeight="Bold">
+                    <edc:Callout.RenderTransform>
+                        <CompositeTransform Rotation="-0.734"/>
+                    </edc:Callout.RenderTransform>
+                </edc:Callout>
+                <Button Content="Вернуться к списку категорий" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,669,0,0" Width="396" Background="#FF353831" BorderBrush="#FF151515" Foreground="#FF87F700" Click="Button_Click_11"/>
+                <TextBlock x:Name="tbEnterKolichestvoStar" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="79" FontSize="20" Margin="80,590,0,0" Foreground="#FFDC910F"/>
+            </Grid>
+            <Grid x:Name="gridGolovolomInput" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="473" VerticalAlignment="Top" Width="470" Margin="46,-44,-36,0" Source="/Assets/ornaments.png"/>
+                <Image HorizontalAlignment="Left" Height="96.647" VerticalAlignment="Top" Width="102.966" Margin="21.122,679.981,0,-8.628" Source="/Assets/shiny-downloads-icon.png" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-227.168"/>
+                    </Image.RenderTransform>
+                </Image>
+                <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,669,0,0" Height="89" Width="92" Opacity="0" Click="Button_Click_12"/>
+                <ScrollViewer HorizontalAlignment="Left" Height="521" VerticalAlignment="Top" Width="380" Margin="10,143,0,0">
+                    <TextBlock x:Name="tbGolovolomka" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="1515" Width="380" FontSize="23" Foreground="Black" FontWeight="Bold" />
+                </ScrollViewer>
+                <TextBlock x:Name="tbGolovolomTitul" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="46,69,0,0" Width="357" Height="51" FontSize="30" FontWeight="Bold"/>
+                <Image HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="72" Margin="288,689,0,0" Source="/Assets/arrow_left_double.png"/>
+                <Image HorizontalAlignment="Left" Height="79" VerticalAlignment="Top" Width="72" Margin="398,689,0,0" Source="/Assets/arrow_right_double.png"/>
+                <Button x:Name="btGolback" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,689,0,0" Width="76" Opacity="0" Height="79" Click="btGolback_Click"/>
+                <Button x:Name="btGolnext" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="398,689,0,0" Width="72" Opacity="0" Height="79" Click="btGolnext_Click"/>
+                <Image HorizontalAlignment="Left" Height="89" VerticalAlignment="Top" Width="86" Margin="161,679,0,0" Source="/Assets/ImageTFMenu/helpImages.png"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,669,0,0" Width="86" Height="99" Opacity="0" Click="Button_Click_13"/>
+            </Grid>
+            <Grid x:Name="gridGlmkuHelp" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="154" VerticalAlignment="Top" Width="172" Margin="160,150,0,0" Source="/Assets/info-icon.png"/>
+                <ScrollViewer HorizontalAlignment="Left" Height="377" VerticalAlignment="Top" Width="480" Margin="0,304,0,0" Foreground="White" Background="#FF141421">
+                    <TextBlock x:Name="tbGmkuTrueAnswer" TextWrapping="Wrap" Text="TextBlock" Height="787" Foreground="White" FontSize="26.667"/>
+                </ScrollViewer>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Правильный ответ!" VerticalAlignment="Top" Margin="82,10,0,0" Width="352" Height="49" Foreground="#FFE8FF00" FontWeight="Bold" FontSize="33.333"/>
+                <TextBlock x:Name="tbStarsNumber" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Margin="62,88,0,0" Width="352" Height="81"/>
+                <Button Content="Продолжить" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,686,0,0" Width="460" BorderBrush="Transparent" Height="82" FontSize="24" Click="Button_Click_14"/>
+            </Grid>
+            <Grid x:Name="gridAbout" HorizontalAlignment="Left" Height="768" VerticalAlignment="Top" Width="480" d:IsHidden="True">
+                <Image HorizontalAlignment="Left" Height="473" VerticalAlignment="Top" Width="470" Margin="46,-44,-36,0" Source="/Assets/ornaments.png"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="О приложении" VerticalAlignment="Top" Margin="70,50,0,0" Height="51" Width="268" FontSize="34" FontWeight="Bold"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="130,106,0,0" Width="340" Height="59" Foreground="Black" FontWeight="Bold" Text="Версия: 1.0.0.0                                       Автор: Николаев Д.К."/>
+                <Image HorizontalAlignment="Left" Height="102.122" VerticalAlignment="Top" Width="107.891" Margin="190.326,684.91,0,-19.032" Source="/Assets/shiny-downloads-icon.png" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                    <Image.RenderTransform>
+                        <CompositeTransform Rotation="-227.168"/>
+                    </Image.RenderTransform>
+                </Image>
+                <Button x:Name="btnbackmenu" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="94" Margin="194,679,0,0" Height="89" Opacity="0" Click="Button_Click_6"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,165,0,0" Height="479" Width="334" Foreground="Black" FontWeight="Bold">
+					<Run Text="Описание: Данное приложение состоит из трех составляющих: загадки, головоломоки и правда или ложь. Отвечая на Загадки вы будете получать звездочки за каждую третью загадку. Каждая звездочка даёт вам право взять подсказку на загадку которую вы не знаете или получить ответ на Головоломку. Правда или Ложь - набор утверждений, а ваша задача-понять правда это, или "/>
+					<Run Text="нет"/>
+					<Run Text=". Для этого вам будет необходимо проявить свои знания и интуицию.  Играйте с удовольствием! Проверьте свои знания! "/>
+                </TextBlock>
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>
